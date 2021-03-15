@@ -141,6 +141,13 @@ body {
 					top: 18.4%;
 					left: 38.2%;
 
+					// Original State
+					display: none;
+
+					&.active {
+						display: block;
+					}
+
 					.screen-item-layout {
 						width: 75%;
 						margin: 10% auto 0;
@@ -168,7 +175,7 @@ body {
 
 			&.offline {
 				.screen-item {
-					display: none;
+					display: none !important;
 
 					.screen-item-layout {
 						animation: none;

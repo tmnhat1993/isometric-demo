@@ -1,3 +1,4 @@
+import { TweenMax } from 'gsap';
 import { pageListener } from './utils';
 
 export default class Common {
@@ -17,6 +18,8 @@ export default class Common {
   bindEvents() {
     // Smooth Scrolling Setup
     this.SmoothScrollSetup();
+
+    this.InitPage();
 
     // Setup The Clock
     this.ClockSetup();
@@ -63,6 +66,82 @@ export default class Common {
           }
         }
       });
+  }
+
+  InitPage() {
+    // Elements Variables
+    this.$RoomBg = $('#room-bg');
+    this.$RoomRug = $('#room-rug');
+    this.$RoomDesk = $('#room-desk');
+    this.$RoomShelf = $('#room-shelf');
+    this.$RoomBed = $('#room-bed');
+    this.$RoomClock = $('#room-clock');
+    this.$ScreenMonitor = $('#on-screen-monitor');
+
+    // Information Layer
+    this.$clockArea = $('#clock-area');
+    this.$controlArea = $('#control-area');
+
+    // First State
+    TweenMax.set([
+      this.$RoomBg,
+      this.$RoomRug,
+      this.$RoomDesk,
+      this.$RoomShelf,
+      this.$RoomBed,
+      this.$RoomClock,
+      this.$clockArea,
+      this.$controlArea
+    ],{ autoAlpha: 0 });
+
+    // Timeline Build
+    this.roomTimeline = new TimelineMax({
+      onComplete: () => {
+        this.$ScreenMonitor.addClass('active');
+      }
+    });
+
+    // Room Animation
+    this.roomTimeline.add('anim-start');
+    this.roomTimeline.fromTo([
+      this.$RoomBg,this.$RoomClock
+    ],1,{
+      autoAlpha: 0,
+      y: window.innerHeight * 0.1,
+    },{
+      autoAlpha: 1,
+      y: 0
+    },'anim-start');
+
+    this.roomTimeline.staggerFromTo([
+      this.$RoomDesk,
+      this.$RoomShelf,
+      this.$RoomBed,
+      this.$RoomRug,
+    ],0.6,{
+      autoAlpha: 0,
+      y: -window.innerHeight * 0.025
+    },{
+      autoAlpha: 1,
+      y: 0,
+    },0.2,'anim-start+=0.75');
+
+    // Control And Time
+    this.roomTimeline.add('room-show');
+    this.roomTimeline.fromTo(this.$clockArea,0.4,{
+      autoAlpha: 0,
+      y: -window.innerHeight * 0.02,
+    },{
+      autoAlpha: 1,
+      y: 0,
+    },'room-show');
+    this.roomTimeline.fromTo(this.$controlArea,0.4,{
+      autoAlpha: 0,
+      x: -window.innerHeight * 0.02,
+    },{
+      autoAlpha: 1,
+      x: 0,
+    },'room-show')
   }
 
   ClockSetup() {

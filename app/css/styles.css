@@ -125,7 +125,11 @@ body {
           height: 9.7%;
           overflow: hidden;
           top: 18.4%;
-          left: 38.2%; }
+          left: 38.2%;
+          display: none; }
+          html .page-wrapper .content-layer .main-content .screen-item.active,
+          body .page-wrapper .content-layer .main-content .screen-item.active {
+            display: block; }
           html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout,
           body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout {
             width: 75%;
@@ -148,7 +152,7 @@ body {
                 width: 100%; }
       html .page-wrapper .content-layer.offline .screen-item,
       body .page-wrapper .content-layer.offline .screen-item {
-        display: none; }
+        display: none !important; }
         html .page-wrapper .content-layer.offline .screen-item .screen-item-layout,
         body .page-wrapper .content-layer.offline .screen-item .screen-item-layout {
           animation: none; }
