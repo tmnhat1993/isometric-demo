@@ -80,12 +80,16 @@ body {
       html .page-wrapper .content-layer .main-content,
       body .page-wrapper .content-layer .main-content {
         position: relative; }
-        html .page-wrapper .content-layer .main-content .content-background img,
-        body .page-wrapper .content-layer .main-content .content-background img {
-          height: 70vh; }
+        html .page-wrapper .content-layer .main-content .content-background,
+        body .page-wrapper .content-layer .main-content .content-background {
+          opacity: 0; }
+          html .page-wrapper .content-layer .main-content .content-background img,
+          body .page-wrapper .content-layer .main-content .content-background img {
+            height: 70vh; }
         html .page-wrapper .content-layer .main-content .content-item,
         body .page-wrapper .content-layer .main-content .content-item {
-          position: absolute; }
+          position: absolute;
+          opacity: 0; }
           html .page-wrapper .content-layer .main-content .content-item.item-bed,
           body .page-wrapper .content-layer .main-content .content-item.item-bed {
             z-index: 2;

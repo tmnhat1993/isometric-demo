@@ -80,6 +80,8 @@ body {
 				position: relative;
 				// The Background
 				.content-background {
+					opacity: 0;
+
 					img {
 						height: 70vh;
 					}
@@ -88,7 +90,7 @@ body {
 				// The Item Inside
 				.content-item {
 					position: absolute;
-					// opacity: 0.7;
+					opacity: 0;
 
 					// The Bed
 					&.item-bed {
