@@ -37,7 +37,7 @@
 		<div class="page-wrapper">
 			<!-- Background Layer -->
 			<div class="background-layer">
-				<div class="page-bg bg-nighttime active"></div>
+				<div class="page-bg bg-nighttime"></div>
 				<div class="page-bg bg-daytime"></div>
 				<div class="page-bg bg-between"></div>
 			</div>
@@ -92,9 +92,36 @@
 
 			<!-- Information Layer -->
 			<div class="information-layer">
+				<!-- Title Block -->
 				<div class="title-block"></div>
 
-				<div class="clock-block"></div>
+				<!-- Clock Block -->
+				<div class="clock-block">
+					<div class="date" id="date-holder">Tues 4th 2021</div>
+					<div class="hours" id="time-holder"></div>
+				</div>
+
+				<!-- Copyright Block -->
+				<div class="copyright-block">#Nihato</div>
+
+				<!-- Controller Block -->
+				<div class="controller-block">
+					<button class="control-time to-daytime" data-switch-time="daytime">
+						Daytime
+					</button>
+					<button class="control-time to-nighttime" data-switch-time="nighttime">
+						Nighttime
+					</button>
+					<button class="control-time to-between" data-switch-time="between">
+						Transition Time
+					</button>
+					<button class="control-status to-offline" id="control-to-offline">
+						Offline
+					</button>
+					<button class="control-status to-online" id="control-to-online">
+						Online
+					</button>
+				</div>
 			</div>
 		</div>
 		<!-- MAIN CONTENT -->
@@ -102,6 +129,7 @@
 		<div class="mold-element"></div>
 
 		<!-- SCRIPT REF -->
+		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/scripts-bundled.js"></script>
 		<!-- SCRIPT REF - END -->
 	</body>

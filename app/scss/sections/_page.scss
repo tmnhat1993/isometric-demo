@@ -47,7 +47,7 @@ body {
 				}
 
 				&.bg-daytime {
-					background: linear-gradient(#56ccf2, #2f80ed);
+					background: linear-gradient(#f2994a, #f2c94c);
 				}
 			}
 		}
@@ -162,6 +162,79 @@ body {
 								width: 100%;
 							}
 						}
+					}
+				}
+			}
+
+			&.offline {
+				.screen-item {
+					display: none;
+
+					.screen-item-layout {
+						animation: none;
+					}
+				}
+			}
+		}
+
+		/* Information Layer */
+		.information-layer {
+			// Copyright
+			.copyright-block {
+				position: absolute;
+				z-index: 5;
+				right: 0;
+				bottom: 0;
+				padding: 10px 15px;
+				color: #fff;
+				opacity: 0.5;
+				font-size: 20px;
+				font-weight: 600;
+			}
+
+			// Clock
+			.clock-block {
+				position: absolute;
+				z-index: 6;
+				width: 50%;
+				left: 25%;
+				padding: 15px;
+				font-size: 28px;
+				color: #fff;
+				font-family: "Roboto Mono", monospace;
+				text-align: center;
+
+				& > * {
+					display: block;
+				}
+			}
+
+			// Controller
+			.controller-block {
+				position: absolute;
+				z-index: 7;
+				left: 0;
+				padding: 10px;
+				// Control Time Button
+				.control-time,
+				.control-status {
+					color: #fff;
+					border: 1px solid #fff;
+					line-height: 2.25;
+					display: block;
+					width: 120px;
+					font-size: 11px;
+					text-align: center;
+					margin-bottom: 8px;
+					background: transparent;
+					outline: none;
+					cursor: pointer;
+					transition: all ease-in 100ms;
+					font-weight: 600;
+					&:hover {
+						background-color: #fff;
+						color: #333;
+						transition: all ease-out 150ms;
 					}
 				}
 			}

@@ -8,7 +8,11 @@
   * RESPONSIVE MARK
   /* ======================================= */
 /* USAGE */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto+Mono:wght@500&display=swap");
+html,
+body {
+  font-family: "Lato", sans-serif; }
+
 .bg-holder img {
   display: block;
   width: 100%;
@@ -25,7 +29,8 @@ body {
     height: 100vh;
     position: relative;
     /* Background Layer */
-    /* Main Content Layer */ }
+    /* Main Content Layer */
+    /* Information Layer */ }
     html .page-wrapper .background-layer,
     body .page-wrapper .background-layer {
       z-index: 1;
@@ -56,7 +61,7 @@ body {
           background: linear-gradient(#0f0c29, #302b63, #24243e); }
         html .page-wrapper .background-layer .page-bg.bg-daytime,
         body .page-wrapper .background-layer .page-bg.bg-daytime {
-          background: linear-gradient(#56ccf2, #2f80ed); }
+          background: linear-gradient(#f2994a, #f2c94c); }
     html .page-wrapper .content-layer,
     body .page-wrapper .content-layer {
       z-index: 2;
@@ -141,6 +146,67 @@ body {
               body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3 {
                 flex-basis: 90%;
                 width: 100%; }
+      html .page-wrapper .content-layer.offline .screen-item,
+      body .page-wrapper .content-layer.offline .screen-item {
+        display: none; }
+        html .page-wrapper .content-layer.offline .screen-item .screen-item-layout,
+        body .page-wrapper .content-layer.offline .screen-item .screen-item-layout {
+          animation: none; }
+    html .page-wrapper .information-layer .copyright-block,
+    body .page-wrapper .information-layer .copyright-block {
+      position: absolute;
+      z-index: 5;
+      right: 0;
+      bottom: 0;
+      padding: 10px 15px;
+      color: #fff;
+      opacity: 0.5;
+      font-size: 20px;
+      font-weight: 600; }
+    html .page-wrapper .information-layer .clock-block,
+    body .page-wrapper .information-layer .clock-block {
+      position: absolute;
+      z-index: 6;
+      width: 50%;
+      left: 25%;
+      padding: 15px;
+      font-size: 28px;
+      color: #fff;
+      font-family: "Roboto Mono", monospace;
+      text-align: center; }
+      html .page-wrapper .information-layer .clock-block > *,
+      body .page-wrapper .information-layer .clock-block > * {
+        display: block; }
+    html .page-wrapper .information-layer .controller-block,
+    body .page-wrapper .information-layer .controller-block {
+      position: absolute;
+      z-index: 7;
+      left: 0;
+      padding: 10px; }
+      html .page-wrapper .information-layer .controller-block .control-time,
+      html .page-wrapper .information-layer .controller-block .control-status,
+      body .page-wrapper .information-layer .controller-block .control-time,
+      body .page-wrapper .information-layer .controller-block .control-status {
+        color: #fff;
+        border: 1px solid #fff;
+        line-height: 2.25;
+        display: block;
+        width: 120px;
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 8px;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        transition: all ease-in 100ms;
+        font-weight: 600; }
+        html .page-wrapper .information-layer .controller-block .control-time:hover,
+        html .page-wrapper .information-layer .controller-block .control-status:hover,
+        body .page-wrapper .information-layer .controller-block .control-time:hover,
+        body .page-wrapper .information-layer .controller-block .control-status:hover {
+          background-color: #fff;
+          color: #333;
+          transition: all ease-out 150ms; }
 
 @keyframes floating {
   0%,
