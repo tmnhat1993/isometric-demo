@@ -9,276 +9,159 @@
   /* ======================================= */
 /* USAGE */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&display=swap");
-html {
-  margin: 0;
-  padding: 0; }
-  html * {
-    box-sizing: content-box; }
+.bg-holder img {
+  display: block;
+  width: 100%;
+  height: auto; }
 
+html,
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  background-color: #f2f2f2;
   padding: 0;
-  margin: 0; }
-  body.full-screen {
-    overflow: hidden; }
-  body .container {
-    width: 100%;
-    margin: auto; }
-  @media (max-width: 768px) {
-    body {
-      height: auto; }
-      body.full-screen {
-        overflow-x: hidden;
-        overflow: auto; } }
-
-.gameplay-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2f2f2; }
-  .gameplay-wrapper .request-full-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center; }
-  .gameplay-wrapper #gameplay-canvas {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    @media only screen and (max-width: 768px) {
-      .gameplay-wrapper #gameplay-canvas {
-        max-width: none;
-        width: 100%;
-        height: auto;
-        max-height: none;
-        margin: 0 auto; } }
-
-section .section-title {
-  font-size: 24px;
-  margin-bottom: 20px; }
-
-section .desc {
-  font-size: 18px;
-  margin-bottom: 15px; }
-
-section .cta-holder {
-  margin-top: 40px; }
-  section .cta-holder .cta-title {
-    font-size: 30px; }
-  section .cta-holder .cta {
-    display: inline-block;
-    line-height: 48px;
-    font-size: 24px;
-    color: #fff;
-    padding: 0 30px;
-    background-color: #4472c4;
-    border-radius: 5px; }
-
-section .txt-center {
-  text-align: center; }
-
-.mold-element {
-  position: fixed;
-  z-index: -1;
-  height: 100vh;
-  /* Use vh as a fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100); }
-
-/* Hide Header And Footer On Mobile Landscape Mode */
-@media (max-width: 999px) and (orientation: landscape) {
-  header,
-  footer {
-    display: none; } }
-
-.debug-console {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 200px;
-  background-color: #999;
-  left: -200px; }
-  .debug-console ul {
-    padding: 0;
-    list-style: none;
-    font-size: 18px;
-    font-weight: 600;
-    text-indent: 0; }
-    .debug-console ul li {
-      margin-bottom: 10px; }
-      .debug-console ul li button {
-        font-size: 15px;
-        display: block;
-        margin: auto; }
-  .debug-console .debug-message {
-    padding: 15px;
-    font-size: 14px; }
-    .debug-console .debug-message p {
-      margin-bottom: 10px; }
-      .debug-console .debug-message p:hover {
-        color: #f92207; }
-  @media only screen and (max-width: 768px) {
-    .debug-console {
-      display: none; } }
-
-#top-page-wrapper .top-page-banner {
-  width: 100%;
-  position: relative;
-  height: 33.33vw;
-  background-color: #eaeaea; }
-
-#top-page-wrapper .top-page-main-content {
-  padding: 30px 0; }
-
-#top-page-wrapper .top-page-disclaimer {
-  padding: 30px 0; }
-  #top-page-wrapper .top-page-disclaimer .container {
-    background-color: #eee;
-    padding: 30px;
-    border-radius: 20px; }
-    #top-page-wrapper .top-page-disclaimer .container ul {
-      margin: 0; }
-
-#header_top {
-  background-color: #ffffff;
-  width: 100%;
-  margin: 0 auto 0;
-  text-align: center; }
-  #header_top .header_inner {
-    width: 960px;
-    margin: 0 auto;
-    text-align: center; }
-  #header_top .m01 {
-    width: 49%;
-    float: left;
-    text-align: left; }
-  #header_top .m02 {
-    width: 50%;
-    float: left;
-    text-align: right; }
-    #header_top .m02 img {
-      padding: 13px 0 0; }
-
-@media only screen and (max-width: 1368px) {
-  #header_top .header_inner {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center; } }
-
-@media only screen and (max-width: 768px) {
-  #header_top {
-    width: 100%;
-    height: auto; } }
-
-#footer {
-  width: 100%;
-  background-color: #ff9132; }
-  #footer .footer_1 {
-    width: 960px;
-    padding: 11px 0;
-    padding-right: 20px;
-    margin: 0 auto;
-    text-align: right;
-    color: #ffffff; }
-
-@media only screen and (max-width: 1368px) {
-  #footer {
-    padding-right: 20px; }
-    #footer .footer_1 {
-      width: 100%; } }
-
-html {
   margin: 0;
-  padding: 0; }
-  html * {
-    box-sizing: content-box; }
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  background-color: #f2f2f2;
-  padding: 0;
-  margin: 0; }
-  body.full-screen {
-    overflow: hidden; }
-  body .container {
+  overflow: hidden; }
+  html .page-wrapper,
+  body .page-wrapper {
     width: 100%;
-    margin: auto; }
-  @media (max-width: 768px) {
-    body {
-      height: auto; }
-      body.full-screen {
-        overflow-x: hidden;
-        overflow: auto; } }
-
-.gameplay-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2f2f2; }
-  .gameplay-wrapper .request-full-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center; }
-  .gameplay-wrapper #gameplay-canvas {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    @media only screen and (max-width: 768px) {
-      .gameplay-wrapper #gameplay-canvas {
-        max-width: none;
+    height: 100vh;
+    position: relative;
+    /* Background Layer */
+    /* Main Content Layer */ }
+    html .page-wrapper .background-layer,
+    body .page-wrapper .background-layer {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #222; }
+      html .page-wrapper .background-layer .page-bg,
+      body .page-wrapper .background-layer .page-bg {
+        position: absolute;
         width: 100%;
-        height: auto;
-        max-height: none;
-        margin: 0 auto; } }
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden; }
+        html .page-wrapper .background-layer .page-bg.active,
+        body .page-wrapper .background-layer .page-bg.active {
+          opacity: 1;
+          visibility: visible; }
+        html .page-wrapper .background-layer .page-bg.bg-between,
+        body .page-wrapper .background-layer .page-bg.bg-between {
+          background: linear-gradient(#c94b4b, #4b134f); }
+        html .page-wrapper .background-layer .page-bg.bg-nighttime,
+        body .page-wrapper .background-layer .page-bg.bg-nighttime {
+          background: linear-gradient(#0f0c29, #302b63, #24243e); }
+        html .page-wrapper .background-layer .page-bg.bg-daytime,
+        body .page-wrapper .background-layer .page-bg.bg-daytime {
+          background: linear-gradient(#56ccf2, #2f80ed); }
+    html .page-wrapper .content-layer,
+    body .page-wrapper .content-layer {
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10vh; }
+      html .page-wrapper .content-layer.offline,
+      body .page-wrapper .content-layer.offline {
+        filter: brightness(0.3) grayscale(0.75); }
+      html .page-wrapper .content-layer .main-content,
+      body .page-wrapper .content-layer .main-content {
+        position: relative; }
+        html .page-wrapper .content-layer .main-content .content-background img,
+        body .page-wrapper .content-layer .main-content .content-background img {
+          height: 70vh; }
+        html .page-wrapper .content-layer .main-content .content-item,
+        body .page-wrapper .content-layer .main-content .content-item {
+          position: absolute; }
+          html .page-wrapper .content-layer .main-content .content-item.item-bed,
+          body .page-wrapper .content-layer .main-content .content-item.item-bed {
+            z-index: 2;
+            width: 42.2%;
+            top: 40%;
+            left: 2.6%; }
+          html .page-wrapper .content-layer .main-content .content-item.item-desk,
+          body .page-wrapper .content-layer .main-content .content-item.item-desk {
+            z-index: 3;
+            width: 45.1%;
+            top: 17%;
+            left: 27.7%; }
+          html .page-wrapper .content-layer .main-content .content-item.item-shelf,
+          body .page-wrapper .content-layer .main-content .content-item.item-shelf {
+            z-index: 5;
+            width: 27.4%;
+            top: 27.97%;
+            left: 70.5%; }
+          html .page-wrapper .content-layer .main-content .content-item.item-rug,
+          body .page-wrapper .content-layer .main-content .content-item.item-rug {
+            z-index: 4;
+            width: 17.56%;
+            top: 74.7%;
+            left: 40.9%; }
+          html .page-wrapper .content-layer .main-content .content-item.item-clock,
+          body .page-wrapper .content-layer .main-content .content-item.item-clock {
+            z-index: 3;
+            width: 6.4%;
+            top: 22.3%;
+            left: 17.95%; }
+        html .page-wrapper .content-layer .main-content .screen-item,
+        body .page-wrapper .content-layer .main-content .screen-item {
+          position: absolute;
+          z-index: 6;
+          background-color: #666;
+          width: 19%;
+          height: 9.7%;
+          overflow: hidden;
+          top: 18.4%;
+          left: 38.2%; }
+          html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout,
+          body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout {
+            width: 75%;
+            margin: 10% auto 0;
+            background-color: #eee;
+            height: 320%;
+            padding-top: 10%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            animation: scrolling 10s cubic-bezier(0.55, 0.01, 0.48, 1) 500ms infinite; }
+            html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column,
+            body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column {
+              background-color: #aaa;
+              flex-basis: 45%;
+              margin-bottom: 5%; }
+              html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3,
+              body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3 {
+                flex-basis: 90%;
+                width: 100%; }
 
-section .section-title {
-  font-size: 24px;
-  margin-bottom: 20px; }
+@keyframes floating {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  25% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); } }
 
-section .desc {
-  font-size: 18px;
-  margin-bottom: 15px; }
-
-section .cta-holder {
-  margin-top: 40px; }
-  section .cta-holder .cta-title {
-    font-size: 30px; }
-  section .cta-holder .cta {
-    display: inline-block;
-    line-height: 48px;
-    font-size: 24px;
-    color: #fff;
-    padding: 0 30px;
-    background-color: #4472c4;
-    border-radius: 5px; }
-
-section .txt-center {
-  text-align: center; }
-
-.mold-element {
-  position: fixed;
-  z-index: -1;
-  height: 100vh;
-  /* Use vh as a fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100); }
-
-/* Hide Header And Footer On Mobile Landscape Mode */
-@media (max-width: 999px) and (orientation: landscape) {
-  header,
-  footer {
-    display: none; } }
+@keyframes scrolling {
+  0%,
+  25%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50%,
+  75% {
+    -webkit-transform: translateY(-75%);
+    transform: translateY(-75%); } }

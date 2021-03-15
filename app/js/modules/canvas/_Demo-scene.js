@@ -6,7 +6,7 @@ import {
   ClearScreen,
   pageListener,
   CreateGradTexture
-} from "./utils";
+} from "../utils";
 
 export default class DemoScene {
   /* ===================================

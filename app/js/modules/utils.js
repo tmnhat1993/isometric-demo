@@ -172,44 +172,8 @@ let RemoveHoverFilter = (element) => {
   element.tint = 0xffffff;
 };
 
-let DrawNumber = (number,type,color,size) => {
-  let numberSring = "" + number;
-  let numberStyle = {
-    x: 0,
-    y: 0,
-    width: 0.05,
-  };
 
-  let tint = color ? color : 0x000000;
-  let fontFamily = type == 1 ? "mplus" : "hira";
-
-  let numberContainer = new PIXI.Container();
-  numberContainer.tint = tint;
-
-  let ratio = fontFamily == "mplus" ? 1.25 : 1.5;
-
-  let imagePath = IS_MOBILE
-    ? "images/common/number/mb/"
-    : "images/common/number/";
-
-  if (numberSring.length > 0) {
-    for (let i = 0; i < numberSring.length; i++) {
-      let digit = numberSring.charAt(i);
-
-      let digitImage = LoadImage(`${imagePath}${digit}-${fontFamily}.png`);
-      digitImage.width = size;
-      digitImage.height = size * ratio;
-      digitImage.y = 0;
-      digitImage.x = i * size * 1.25;
-      digitImage.tint = tint;
-      numberContainer.addChild(digitImage);
-    }
-  }
-
-  return numberContainer;
-};
-
-let CreateGradTexture = () => {
+let CreateGradTexture = (colorStop1,colorStop2) => {
   // adjust it if somehow you need better quality for very very big images
   const quality = 256;
   const canvas = document.createElement('canvas');
@@ -240,7 +204,6 @@ export {
   DrawText,
   ApplyHoverFilter,
   RemoveHoverFilter,
-  DrawNumber,
   SoundEffect,
   CreateGradTexture,
 };

@@ -13,7 +13,7 @@
 			</script>
 		<![endif]-->
 		<title>Isometric Room Demo</title>
-		<link rel="stylesheet" href="css/styles.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
@@ -34,8 +34,68 @@
 
 	<body class="full-screen">
 		<!-- MAIN CONTENT -->
-		<div class="page-wrapper gameplay-wrapper">
-			<div id="gameplay-canvas"></div>
+		<div class="page-wrapper">
+			<!-- Background Layer -->
+			<div class="background-layer">
+				<div class="page-bg bg-nighttime active"></div>
+				<div class="page-bg bg-daytime"></div>
+				<div class="page-bg bg-between"></div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="content-layer online">
+				<!-- Main Content -->
+				<div class="main-content">
+					<div class="content-background">
+						<img draggable="false" src="images/main-room.png" alt="" />
+					</div>
+
+					<!-- Content Item - Rug -->
+					<div class="content-item item-rug bg-holder">
+						<img draggable="false" src="images/rug.png" alt="" />
+					</div>
+
+					<!-- Content Item - Desk -->
+					<div class="content-item item-desk bg-holder">
+						<img draggable="false" src="images/desk.png" alt="" />
+					</div>
+
+					<!-- Content Item - Shelf -->
+					<div class="content-item item-shelf bg-holder">
+						<img draggable="false" src="images/shelf.png" alt="" />
+					</div>
+
+					<!-- Content Item - Bed -->
+					<div class="content-item item-bed bg-holder">
+						<img draggable="false" src="images/bed.png" alt="" />
+					</div>
+
+					<!-- Content Item - Clock -->
+					<div class="content-item item-clock bg-holder">
+						<img draggable="false" src="images/clock.png" alt="" />
+					</div>
+
+					<!-- Screen Item -->
+					<div class="screen-item">
+						<div class="screen-item-layout">
+							<div class="layout-column column-1"></div>
+							<div class="layout-column column-2"></div>
+							<div class="layout-column column-3"></div>
+							<div class="layout-column column-1"></div>
+							<div class="layout-column column-2"></div>
+							<div class="layout-column column-1"></div>
+							<div class="layout-column column-2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Information Layer -->
+			<div class="information-layer">
+				<div class="title-block"></div>
+
+				<div class="clock-block"></div>
+			</div>
 		</div>
 		<!-- MAIN CONTENT -->
 
