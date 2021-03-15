@@ -49,7 +49,7 @@ export default class DemoScene {
     window.appScenes.DemoScene = new PIXI.Container();
 
     // Add Demo Scene into stage
-    applicationCache.stage.addChild(window.appScenes.DemoScene);
+    app.stage.addChild(window.appScenes.DemoScene);
 
     // Main Animation Timeline Build
     this.Screen_Init();

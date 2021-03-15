@@ -22,6 +22,7 @@ export default class Home {
     // Page Listener
     window.PageListener = new pageListener();
     window.appScenes = {};
+    window.appState = {}
 
     // Event Listeners Object, Detect Device, Global variables
     let common = new Common();
@@ -106,7 +107,7 @@ export default class Home {
     canvasContainer.appendChild(window.app.view);
 
     // Support Main Canvas Function
-    this.ChangeCursor();
+    // this.ChangeCursor();
   }
 
   // LOADING FEATURE

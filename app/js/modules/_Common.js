@@ -57,52 +57,6 @@ export default class Common {
       SCREEN_HEIGHT: heightIOS,
       RATIO: ratio,
     };
-
-    window.addEventListener("orientationchange",(e) => {
-      orientationChanged().then(function () {
-        // Recalculate the orientation
-        if (screen.orientation) {
-          if (screen.orientation.type.indexOf("landscape") > -1) {
-            window.gameState.orientation = "landscape";
-          } else {
-            window.gameState.orientation = "portrait";
-          }
-        } else {
-          // Manually calculation Screen orientation if API is not available
-          let moldHeight = document.querySelector(".mold-element").offsetHeight;
-
-          let widthIOS = document.documentElement.clientWidth;
-          let heightIOS = iOS
-            ? moldHeight - 85
-            : document.documentElement.clientHeight;
-          let ratio = widthIOS / heightIOS;
-          if (ratio > 1.5) {
-            window.gameState.orientation = "landscape";
-          } else {
-            window.gameState.orientation = "portrait";
-          }
-        }
-
-        // Screen Orientation API available
-        if (screen.orientation) {
-          if (
-            !window.gameState.isDirty &&
-            gameState.orientation == "landscape"
-          ) {
-            location.reload();
-          }
-        } else {
-          // Assume the width is much more larger than the height => Landscape
-          if (
-            !window.gameState.isDirty &&
-            gameState.orientation == "landscape"
-          ) {
-            // User have not interact and in landscape mode after orientation change
-            location.reload();
-          }
-        }
-      });
-    });
   }
 
   /* ===================================
