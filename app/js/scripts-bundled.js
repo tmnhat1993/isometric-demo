@@ -32706,7 +32706,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.pageListener = pageListener;
-exports.SoundEffect = exports.DrawNumber = exports.RemoveHoverFilter = exports.ApplyHoverFilter = exports.DrawText = exports.DrawImage = exports.ClearScreen = exports.DrawScreen = exports.LoadText = exports.LoadImage = void 0;
+exports.CreateGradTexture = exports.SoundEffect = exports.DrawNumber = exports.RemoveHoverFilter = exports.ApplyHoverFilter = exports.DrawText = exports.DrawImage = exports.ClearScreen = exports.DrawScreen = exports.LoadText = exports.LoadImage = void 0;
 
 var _drawData = _interopRequireDefault(__webpack_require__(12));
 
@@ -32931,10 +32931,28 @@ var DrawNumber = function DrawNumber(number, type, color, size) {
   }
 
   return numberContainer;
+};
+
+exports.DrawNumber = DrawNumber;
+
+var CreateGradTexture = function CreateGradTexture() {
+  // adjust it if somehow you need better quality for very very big images
+  var quality = 256;
+  var canvas = document.createElement('canvas');
+  canvas.width = 1;
+  canvas.height = quality;
+  var ctx = canvas.getContext('2d'); // use canvas2d API to create gradient
+
+  var grd = ctx.createLinearGradient(0, 0, 0, quality);
+  grd.addColorStop(0, '#c94b4b');
+  grd.addColorStop(1, '#4b134f');
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, 1, quality);
+  return PIXI.Texture.from(canvas);
 }; // Export all utils functions
 
 
-exports.DrawNumber = DrawNumber;
+exports.CreateGradTexture = CreateGradTexture;
 
 /***/ }),
 /* 27 */
@@ -43779,13 +43797,26 @@ function () {
       // Screen 1 Main Container
       window.appScenes.DemoScene = new PIXI.Container(); // Add Demo Scene into stage
 
-      app.stage.addChild(window.appScenes.DemoScene); // Main Animation Timeline Build
+      app.stage.addChild(window.appScenes.DemoScene); // Draw the demo Screen
 
-      this.Screen_Init();
+      this.DrawScene(); // Main Animation Timeline Build
+
+      this.ResetScene();
     }
   }, {
-    key: "Screen_Init",
-    value: function Screen_Init() {
+    key: "DrawScene",
+    value: function DrawScene() {
+      // Gradient Texture
+      this.GradTexture = (0, _utils.CreateGradTexture)();
+      this.SceneBg = new PIXI.Sprite(this.GradTexture);
+      this.SceneBg.position.set(0, 0);
+      this.SceneBg.width = GAME_DATA.SCREEN_WIDTH;
+      this.SceneBg.height = GAME_DATA.SCREEN_HEIGHT;
+      appScenes.DemoScene.addChild(this.SceneBg);
+    }
+  }, {
+    key: "ResetScene",
+    value: function ResetScene() {
       this.DRAW_DATA = DRAW_DATA.DEMO_SCENE;
     }
   }]);

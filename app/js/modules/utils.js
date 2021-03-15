@@ -6,13 +6,13 @@ function pageListener() {
   this.events = {};
 }
 
-pageListener.prototype.on = function (eventType, listener) {
+pageListener.prototype.on = function (eventType,listener) {
   // If the eventType Property not exist yet, create an empty aray of that property
   this.events[eventType] = this.events[eventType] || [];
   this.events[eventType].push(listener);
 };
 
-pageListener.prototype.emit = function (eventType, params) {
+pageListener.prototype.emit = function (eventType,params) {
   if (this.events[eventType] && this.events[eventType].length > 0) {
     // Loop through the events[eventType] array of function and invoke each of them
     this.events[eventType].forEach(function (item) {
@@ -34,19 +34,19 @@ let LoadImage = (imagePath) => {
   }
 };
 
-let LoadText = (context, style) => {
-  let trueStyle = Object.assign({}, style);
+let LoadText = (context,style) => {
+  let trueStyle = Object.assign({},style);
   if (IS_MOBILE) {
     trueStyle.fontSize = (trueStyle.fontSize * DRAW_DATA.SCREEN_WIDTH) / 1024;
     trueStyle.lineHeight =
       (trueStyle.lineHeight * DRAW_DATA.SCREEN_WIDTH) / 1024;
   }
   let textStyle = new PIXI.TextStyle(trueStyle);
-  return new PIXI.Text(context, textStyle);
+  return new PIXI.Text(context,textStyle);
 };
 
 // Load Sound Effect
-let SoundEffect = (soundName, action = "play") => {
+let SoundEffect = (soundName,action = "play") => {
   const EFFECT_SOUNDS = {
     clickButton: "sounds/click_button.wav",
     airPlaneFly: "sounds/airplane_fly.wav",
@@ -64,12 +64,12 @@ let SoundEffect = (soundName, action = "play") => {
   // Init sound name inside PIXI Loader
   for (let name in EFFECT_SOUNDS) {
     try {
-      PIXI.Loader.shared.add(name, EFFECT_SOUNDS[name]);
-    } catch (error) {}
+      PIXI.Loader.shared.add(name,EFFECT_SOUNDS[name]);
+    } catch (error) { }
   }
 
   // Play sound
-  PIXI.Loader.shared.load(function (loader, resources) {
+  PIXI.Loader.shared.load(function (loader,resources) {
     if (resources[soundName]) {
       return action === "stop"
         ? PIXI_SOUND.stop(soundName)
@@ -79,7 +79,7 @@ let SoundEffect = (soundName, action = "play") => {
 };
 
 // * - IMAGE
-let DrawImage = (elem, posData) => {
+let DrawImage = (elem,posData) => {
   elem.anchor.x = 0.5;
   elem.anchor.y = 0.5;
   //Change the sprite's position
@@ -101,7 +101,7 @@ let DrawImage = (elem, posData) => {
 };
 
 // * - Text
-let DrawText = (elem, posData) => {
+let DrawText = (elem,posData) => {
   //Change the sprite's position
   elem.x = posData.x * GAME_DATA.SCREEN_WIDTH;
   elem.y = posData.y * GAME_DATA.SCREEN_HEIGHT;
@@ -110,15 +110,15 @@ let DrawText = (elem, posData) => {
   // elem.zIndex = posData.zIndex;
 };
 
-let DrawScreen = (Elements, Container, ScreenNo = 1) => {
-  for (const [key, value] of Object.entries(Elements)) {
+let DrawScreen = (Elements,Container,ScreenNo = 1) => {
+  for (const [key,value] of Object.entries(Elements)) {
     // Move the elements to its correct position and size
     switch (DRAW_DATA[`SCREEN_${ScreenNo}_ELEMENT_SIZE`][key].type) {
       case "image":
-        DrawImage(value, DRAW_DATA[`SCREEN_${ScreenNo}_ELEMENT_SIZE`][key]);
+        DrawImage(value,DRAW_DATA[`SCREEN_${ScreenNo}_ELEMENT_SIZE`][key]);
         break;
       case "text":
-        DrawText(value, DRAW_DATA[`SCREEN_${ScreenNo}_ELEMENT_SIZE`][key]);
+        DrawText(value,DRAW_DATA[`SCREEN_${ScreenNo}_ELEMENT_SIZE`][key]);
         break;
     }
 
@@ -172,7 +172,7 @@ let RemoveHoverFilter = (element) => {
   element.tint = 0xffffff;
 };
 
-let DrawNumber = (number, type, color, size) => {
+let DrawNumber = (number,type,color,size) => {
   let numberSring = "" + number;
   let numberStyle = {
     x: 0,
@@ -209,6 +209,26 @@ let DrawNumber = (number, type, color, size) => {
   return numberContainer;
 };
 
+let CreateGradTexture = () => {
+  // adjust it if somehow you need better quality for very very big images
+  const quality = 256;
+  const canvas = document.createElement('canvas');
+  canvas.width = 1;
+  canvas.height = quality;
+
+  const ctx = canvas.getContext('2d');
+
+  // use canvas2d API to create gradient
+  const grd = ctx.createLinearGradient(0,0,0,quality);
+  grd.addColorStop(0,'#c94b4b');
+  grd.addColorStop(1,'#4b134f');
+
+  ctx.fillStyle = grd;
+  ctx.fillRect(0,0,1,quality);
+
+  return PIXI.Texture.from(canvas);
+}
+
 // Export all utils functions
 export {
   pageListener,
@@ -222,4 +242,5 @@ export {
   RemoveHoverFilter,
   DrawNumber,
   SoundEffect,
+  CreateGradTexture,
 };

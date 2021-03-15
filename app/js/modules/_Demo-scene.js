@@ -5,6 +5,7 @@ import {
   DrawScreen,
   ClearScreen,
   pageListener,
+  CreateGradTexture
 } from "./utils";
 
 export default class DemoScene {
@@ -51,11 +52,26 @@ export default class DemoScene {
     // Add Demo Scene into stage
     app.stage.addChild(window.appScenes.DemoScene);
 
+    // Draw the demo Screen
+    this.DrawScene();
+
     // Main Animation Timeline Build
-    this.Screen_Init();
+    this.ResetScene();
   }
 
-  Screen_Init() {
+  DrawScene() {
+    // Gradient Texture
+    this.GradTexture = CreateGradTexture();
+
+    this.SceneBg = new PIXI.Sprite(this.GradTexture);
+    this.SceneBg.position.set(0,0);
+    this.SceneBg.width = GAME_DATA.SCREEN_WIDTH;
+    this.SceneBg.height = GAME_DATA.SCREEN_HEIGHT;
+
+    appScenes.DemoScene.addChild(this.SceneBg);
+  }
+
+  ResetScene() {
     this.DRAW_DATA = DRAW_DATA.DEMO_SCENE;
   }
 }
