@@ -1,0 +1,1 @@
+import Home from"./modules/home";window.addEventListener("load",()=>{new Home});

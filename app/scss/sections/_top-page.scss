@@ -1,0 +1,25 @@
+#top-page-wrapper {
+    .top-page-banner {
+        width: 100%;
+        position: relative;
+        height: 33.33vw;
+        background-color: #eaeaea;
+    }
+
+    .top-page-main-content {
+        padding: 30px 0;
+    }
+
+    .top-page-disclaimer {
+        padding: 30px 0;
+        .container {
+            background-color: #eee;
+            padding: 30px;
+            border-radius: 20px;
+
+            ul {
+                margin: 0;
+            }
+        }
+    }
+}

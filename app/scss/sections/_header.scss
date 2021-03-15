@@ -1,0 +1,52 @@
+// -- ==================== PC ======================= --=
+#header_top {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto 0;
+  text-align: center;
+  .header_inner {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .m01 {
+    width: 49%;
+    float: left;
+    text-align: left;
+  }
+
+  .m02 {
+    width: 50%;
+    float: left;
+    text-align: right;
+
+    img {
+      padding: 13px 0 0;
+    }
+  }
+
+}
+// -- ==================== PC - END ======================= --
+
+
+
+// -- ==================== MOBILE ======================= --
+@media #{$information-laptop} {
+  #header_top {
+    .header_inner {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@media #{$information-tablet} {
+  #header_top {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// -- ==================== MOBILE - END ======================= --

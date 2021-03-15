@@ -1,0 +1,36 @@
+.debug-console {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #999;
+    left: -200px;
+    ul {
+        padding: 0;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 600;
+        text-indent: 0;
+        li {
+            margin-bottom: 10px;
+            button {
+                font-size: 15px;
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+    .debug-message {
+        padding: 15px;
+        font-size: 14px;
+        p {
+            margin-bottom: 10px;
+            &:hover {
+                color: #f92207;
+            }
+        }
+    }
+    @media #{$information-tablet} {
+        display: none;
+    }
+}
