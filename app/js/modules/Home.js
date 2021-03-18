@@ -1,6 +1,8 @@
 import { TweenMax } from 'gsap';
 import { pageListener } from './utils';
 
+import VideoPlayer from './_VideoPlayer';
+
 export default class Common {
   /* ===================================
    *  CONSTRUCTOR
@@ -8,6 +10,7 @@ export default class Common {
   constructor() {
     window.PageListener = new pageListener();
 
+    let videoPlayer = new VideoPlayer();
 
     this.bindEvents();
   }

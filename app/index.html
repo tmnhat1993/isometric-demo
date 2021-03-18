@@ -13,6 +13,13 @@
 			</script>
 		<![endif]-->
 		<title>Isometric Room Demo</title>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -122,6 +129,98 @@
 						Online
 					</button>
 				</div>
+
+				<!-- Video Player Block -->
+				<div class="video-player-block" id="video-player">
+					<!-- Video Holder -->
+					<div class="video-holder" id="video-holder"></div>
+
+					<!-- Video Selector -->
+					<div class="video-kind-selector">
+						<div class="control-label-button">
+							<span class="label" id="current-video-name">Select Video</span>
+							<span class="icon"><i class="fas fa-chevron-right"></i></span>
+						</div>
+						<ul class="video-list">
+							<li
+								class="video-item play-video-player"
+								data-weather="lofi"
+								data-video-id="5qap5aO4i9A"
+							>
+								Work Music
+							</li>
+							<li
+								class="video-item play-video-player"
+								data-weather="rain"
+								data-video-id="q76bMs-NwRk"
+							>
+								Rain
+							</li>
+							<li
+								class="video-item play-video-player"
+								data-weather="coffee"
+								data-video-id="gaGrHUekGrc"
+							>
+								Coffee Shop
+							</li>
+							<li
+								class="video-item play-video-player"
+								data-weather="sleep"
+								data-video-id="bP9gMpl1gyQ"
+							>
+								Ambient Sound - Sleep
+							</li>
+						</ul>
+					</div>
+
+					<!-- Video Controller -->
+					<div class="video-controller">
+						<div class="control-btn close-video-player-btn">
+							<i class="fas fa-times"></i>
+						</div>
+						<div class="control-btn minimize-video-player-btn">
+							<i class="fas fa-window-minimize"></i>
+						</div>
+					</div>
+
+					<!-- Video Status Indicator -->
+					<div class="video-status-indicator is-stopped">
+						<div class="is-playing-icon indicator-ico">
+							<div class="icon-holder">
+								<svg viewbox="0 0 100 100" class="sound-indicator-ico">
+									<rect
+										width="25"
+										height="100"
+										class="sound-indicator-item item-1"
+										x="0"
+										y="0"
+									/>
+									<rect
+										width="25"
+										height="100"
+										class="sound-indicator-item item-2"
+										x="33"
+										y="0"
+									/>
+									<rect
+										width="25"
+										height="100"
+										class="sound-indicator-item item-3"
+										x="66"
+										y="0"
+									/>
+								</svg>
+							</div>
+						</div>
+						<div class="video-player-icon indicator-ico">
+							<i class="fab fa-youtube"></i>
+						</div>
+					</div>
+				</div>
+				<!-- Video Player Block - END -->
+
+				<!-- Todo List Block -->
+				<div class="todo-list-block" id="todo-list-block"></div>
 			</div>
 		</div>
 		<!-- MAIN CONTENT -->

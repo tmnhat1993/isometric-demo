@@ -247,6 +247,172 @@ body {
 					}
 				}
 			}
+
+			// Video Player
+			.video-player-block {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 3;
+				color: #fff;
+				-webkit-transform: translateY(0%);
+				transform: translateY(0%);
+				transition: all cubic-bezier(0.08, 0.24, 0.37, 0.99) 750ms;
+
+				&.minimized {
+					-webkit-transform: translateY(100%);
+					transform: translateY(100%);
+					transition: all ease-out 500ms;
+				}
+
+				// Video Holder
+				.video-holder {
+					width: 320px;
+					height: 240px;
+					border: 1px solid #fff;
+					border-radius: 2px;
+					overflow: hidden;
+					margin-bottom: 5px;
+				}
+
+				// Video Kind Selector
+				.video-kind-selector {
+					position: relative;
+					z-index: 2;
+
+					// Control Label Button
+					.control-label-button {
+						width: 100%;
+						font-size: 16px;
+						font-weight: 600;
+						text-align: center;
+						background-color: #fff;
+						color: #222;
+						line-height: 2;
+						position: relative;
+
+						.icon {
+							width: 32px;
+							right: 0;
+							top: 0;
+							text-align: center;
+							line-height: 2;
+							position: absolute;
+						}
+					}
+
+					// Video List
+					.video-list {
+						position: absolute;
+						left: 100%;
+						background-color: #fff;
+						bottom: 0;
+						padding: 0;
+						margin: 0;
+						color: #222;
+						list-style: none;
+						white-space: nowrap;
+
+						.video-item {
+							padding: 0 20px 0 15px;
+							line-height: 1.7;
+							font-weight: 600;
+							cursor: pointer;
+							transition: all ease-in 100ms;
+
+							&:hover {
+								transition: all ease-out 150ms;
+								color: #2c3e50;
+								background-color: #ecf0f1;
+							}
+						}
+					}
+				}
+
+				// Video Controller
+				.video-controller {
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: 15px;
+					display: flex;
+					z-index: 4;
+
+					.control-btn {
+						margin: 0 3px;
+						width: 24px;
+						height: 24px;
+						text-align: center;
+						cursor: pointer;
+						border: 1px solid #fff;
+						transition: all ease-in 100ms;
+
+						.fas {
+							font-size: 18px;
+							line-height: 24px;
+
+							&.fa-play {
+								font-size: 12px;
+							}
+						}
+
+						&:hover {
+							transition: all ease-out 150ms;
+							color: #222;
+							background-color: #fff;
+						}
+					}
+				}
+
+				// Video Status Indicator
+				.video-status-indicator {
+					position: absolute;
+					bottom: 100%;
+					left: 0;
+					width: 40px;
+					height: 40px;
+					border: 1px solid #fff;
+					border-bottom: none;
+
+					.indicator-ico {
+						position: absolute;
+						text-align: center;
+						width: 40px;
+						height: 40px;
+						font-size: 18px;
+						line-height: 40px;
+
+						.icon-holder {
+							width: 40px;
+							height: 40px;
+
+							svg {
+								rect {
+									fill: #fff;
+								}
+							}
+						}
+					}
+
+					&.is-playing {
+						.is-playing-icon {
+							display: block;
+						}
+						.video-player-icon {
+							display: none;
+						}
+					}
+
+					&.is-stopped {
+						.is-playing-icon {
+							display: none;
+						}
+						.video-player-icon {
+							display: block;
+						}
+					}
+				}
+			}
 		}
 	}
 }

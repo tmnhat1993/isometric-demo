@@ -5,3 +5,40 @@
 		height: auto;
 	}
 }
+
+.icon-holder {
+	width: 100px;
+	height: 100px;
+
+	svg {
+		width: 50%;
+
+		.sound-indicator-item {
+			transform-origin: center bottom;
+			animation: soundWave 1.2s linear infinite;
+
+			&.item-2 {
+				animation-duration: 1.7s;
+				animation-delay: 0.24s;
+			}
+
+			&.item-3 {
+				animation-duration: 1.3s;
+				animation-delay: 0.45s;
+			}
+		}
+	}
+}
+
+@keyframes soundWave {
+	0%,
+	100% {
+		transform: scaleY(0.5);
+	}
+	25% {
+		transform: scaleY(0.3);
+	}
+	75% {
+		transform: scaleY(0.8);
+	}
+}
