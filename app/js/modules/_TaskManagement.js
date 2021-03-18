@@ -109,7 +109,7 @@ export default class TaskManagement {
  AddTask() {
   if (this.$NewTaskInput.val() !== '') {
    let taskName = this.$NewTaskInput.val()
-   this.taskManagementData.taskList.unshift({
+   this.taskManagementData.taskList.push({
     id: `task-${Math.floor(Math.random() * 10000)}`,
     name: taskName,
     status: 1 // 1 is undone, 2 is done

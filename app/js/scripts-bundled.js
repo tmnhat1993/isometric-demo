@@ -32040,7 +32040,7 @@ function () {
     value: function AddTask() {
       if (this.$NewTaskInput.val() !== '') {
         var taskName = this.$NewTaskInput.val();
-        this.taskManagementData.taskList.unshift({
+        this.taskManagementData.taskList.push({
           id: "task-".concat(Math.floor(Math.random() * 10000)),
           name: taskName,
           status: 1 // 1 is undone, 2 is done
