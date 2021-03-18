@@ -13,6 +13,10 @@ html,
 body {
   font-family: "Lato", sans-serif; }
 
+html *,
+body * {
+  box-sizing: border-box; }
+
 .bg-holder img {
   display: block;
   width: 100%;
@@ -372,6 +376,112 @@ body {
         html .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .video-player-icon,
         body .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .video-player-icon {
           display: block; }
+    html .page-wrapper .information-layer .todo-list-block,
+    body .page-wrapper .information-layer .todo-list-block {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 320px;
+      z-index: 4;
+      color: #fff; }
+      html .page-wrapper .information-layer .todo-list-block .todo-list-head,
+      body .page-wrapper .information-layer .todo-list-block .todo-list-head {
+        text-align: center;
+        font-size: 15px; }
+      html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list,
+      body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        max-height: 200px;
+        overflow-y: auto; }
+        html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item,
+        body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item {
+          display: flex;
+          padding: 0 10px;
+          margin-bottom: 5px; }
+          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-name,
+          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-name {
+            flex: 1;
+            font-weight: 600;
+            opacity: 0.8;
+            line-height: 1.4;
+            display: flex;
+            min-height: 30px;
+            align-items: center;
+            font-size: 13px; }
+          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action,
+          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action {
+            flex-shrink: 0; }
+            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn,
+            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn {
+              background-color: #fff;
+              text-align: center;
+              line-height: 30px;
+              width: 30px;
+              text-align: center;
+              outline: none;
+              border: none;
+              cursor: pointer; }
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn i,
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fas,
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fab,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn i,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fas,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fab {
+                color: #27ae60; }
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn i,
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fas,
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fab,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn i,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fas,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fab {
+                color: #e74c3c; }
+              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn:hover,
+              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn:hover {
+                background-color: #ecf0f1; }
+          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-name,
+          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-name {
+            text-decoration: line-through;
+            opacity: 0.5; }
+          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn,
+          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn {
+            opacity: 0.6; }
+            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn i,
+            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fas,
+            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fab,
+            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn i,
+            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fas,
+            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fab {
+              color: #999; }
+      html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller,
+      body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller {
+        display: flex; }
+        html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller input,
+        body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller input {
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          outline: none; }
+        html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta,
+        body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta {
+          flex-grow: 1; }
+          html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button,
+          body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button {
+            background: #fff;
+            border: none;
+            outline: none;
+            height: 30px;
+            width: 100%;
+            line-height: 30px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all ease-in 100ms; }
+            html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button:hover,
+            body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button:hover {
+              background-color: #ecf0f1;
+              transition: all ease-out 150ms; }
 
 @keyframes floating {
   0%,

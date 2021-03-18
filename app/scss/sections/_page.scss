@@ -413,6 +413,145 @@ body {
 					}
 				}
 			}
+
+			// Todo List Block
+			.todo-list-block {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 320px;
+				z-index: 4;
+				color: #fff;
+
+				// Todo List heading
+				.todo-list-head {
+					text-align: center;
+					font-size: 15px;
+				}
+
+				// Todo list body
+				.todo-list-body {
+					.todo-list {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+						max-height: 200px;
+						overflow-y: auto;
+
+						// Todo Item
+						.todo-item {
+							display: flex;
+							padding: 0 10px;
+							margin-bottom: 5px;
+
+							// Task Name
+							.task-name {
+								flex: 1;
+								font-weight: 600;
+								opacity: 0.8;
+								line-height: 1.4;
+								display: flex;
+								min-height: 30px;
+								align-items: center;
+								font-size: 13px;
+							}
+
+							// Task Action - Done or delete
+							.task-action {
+								flex-shrink: 0;
+
+								// Button Styling
+								.cta-btn {
+									background-color: #fff;
+									text-align: center;
+									line-height: 30px;
+									width: 30px;
+									text-align: center;
+									outline: none;
+									border: none;
+									cursor: pointer;
+
+									&.task-done-btn {
+										i,
+										.fas,
+										.fab {
+											color: #27ae60;
+										}
+									}
+
+									&.task-delete-btn {
+										i,
+										.fas,
+										.fab {
+											color: #e74c3c;
+										}
+									}
+
+									&:hover {
+										background-color: #ecf0f1;
+									}
+								}
+							}
+
+							&.done {
+								.task-name {
+									text-decoration: line-through;
+									opacity: 0.5;
+								}
+
+								.task-action {
+									.cta-btn {
+										&.task-done-btn {
+											opacity: 0.6;
+											i,
+											.fas,
+											.fab {
+												color: #999;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				// Todo Footer
+				.todo-list-footer {
+					.todo-list-controller {
+						display: flex;
+
+						input {
+							height: 30px;
+							line-height: 30px;
+							padding: 0 10px;
+							outline: none;
+						}
+
+						.control-cta {
+							flex-grow: 1;
+
+							button {
+								background: #fff;
+								border: none;
+								outline: none;
+								height: 30px;
+								width: 100%;
+								line-height: 30px;
+								font-weight: 600;
+								font-size: 12px;
+								cursor: pointer;
+								transition: all ease-in 100ms;
+
+								&:hover {
+									background-color: #ecf0f1;
+									transition: all ease-out 150ms;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

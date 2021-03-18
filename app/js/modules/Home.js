@@ -2,6 +2,7 @@ import { TweenMax } from 'gsap';
 import { pageListener } from './utils';
 
 import VideoPlayer from './_VideoPlayer';
+import TaskManagement from './_TaskManagement';
 
 export default class Common {
   /* ===================================
@@ -11,6 +12,7 @@ export default class Common {
     window.PageListener = new pageListener();
 
     let videoPlayer = new VideoPlayer();
+    let taskManagement = new TaskManagement();
 
     this.bindEvents();
   }

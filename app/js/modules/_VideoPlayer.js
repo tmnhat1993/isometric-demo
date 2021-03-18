@@ -63,11 +63,10 @@ export default class VideoPlayer {
        this.videoStatus.isPlaying = false;
        break;
       case 1: this.videoStatus.isPlaying = true;
-       break
-
+       break;
      }
      // Video End, Update Indicator
-     this.UpdateVideoIndicator()
+     this.UpdateVideoIndicator();
     });
    }
   },300);

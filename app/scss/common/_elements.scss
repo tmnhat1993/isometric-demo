@@ -1,3 +1,9 @@
+html,
+body {
+	* {
+		box-sizing: border-box;
+	}
+}
 .bg-holder {
 	img {
 		display: block;

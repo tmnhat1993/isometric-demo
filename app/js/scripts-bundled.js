@@ -22094,6 +22094,8 @@ var _utils = __webpack_require__(23);
 
 var _VideoPlayer = _interopRequireDefault(__webpack_require__(41));
 
+var _TaskManagement = _interopRequireDefault(__webpack_require__(55));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22113,6 +22115,7 @@ function () {
 
     window.PageListener = new _utils.pageListener();
     var videoPlayer = new _VideoPlayer.default();
+    var taskManagement = new _TaskManagement.default();
     this.bindEvents();
   }
   /* ===================================
@@ -31910,6 +31913,169 @@ exports.default = {
   VIDEO_CUED: 5
 };
 module.exports = exports["default"];
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var TaskManagement =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function TaskManagement() {
+    _classCallCheck(this, TaskManagement);
+
+    // Elements
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(TaskManagement, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      this.TaskManagementSetup();
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "TaskManagementSetup",
+    value: function TaskManagementSetup() {
+      this.$ToDoList = $('#main-todo-list');
+      this.$AddTaskButton = $('#add-new-task');
+      this.$NewTaskInput = $('#new-task-name');
+      this.taskManagementData = this.LoadData(); // First task render
+
+      this.RenderTask(); // Bind Events
+
+      this.TaskManagementEvents();
+    }
+  }, {
+    key: "RenderTask",
+    value: function RenderTask() {
+      var htmlTasksArr = this.taskManagementData.taskList.map(function (item) {
+        return "<li class=\"todo-item ".concat(item.status == 1 ? 'undone' : 'done', "\" id=\"").concat(item.id, "\">\n   <div class=\"task-name\">").concat(item.name, "</div>\n   <div class=\"task-action\">\n    <button class=\"cta-btn task-done-btn\">\n     <i class=\"fas fa-check\"></i>\n    </button>\n    <button class=\"cta-btn task-delete-btn\">\n     <i class=\"fas fa-times\"></i>\n    </button>\n   </div>\n  </li>");
+      });
+      this.$ToDoList.html(htmlTasksArr.join(''));
+    }
+  }, {
+    key: "TaskManagementEvents",
+    value: function TaskManagementEvents() {
+      var _this = this;
+
+      // Delete Task
+      $(document).on('click', '.task-delete-btn', function (e) {
+        var $taskItemTarget = $(e.target).parents('.todo-item');
+        var taskId = $taskItemTarget.attr('id'); // Index of the task inside tasklist object
+
+        var indexOfTask = _this.taskManagementData.taskList.findIndex(function (item) {
+          return item.id === taskId;
+        });
+
+        if (indexOfTask >= 0) {
+          // Remove The Element
+          _this.taskManagementData.taskList.splice(indexOfTask, 1); // Save To Local Storage
+
+
+          _this.SaveData(); // Rerender Task List
+
+
+          _this.RenderTask();
+        }
+      }); // Done Task
+
+      $(document).on('click', '.task-done-btn', function (e) {
+        var $taskItemTarget = $(e.target).parents('.todo-item');
+        var taskId = $taskItemTarget.attr('id'); // Index of the task inside tasklist object
+
+        var task = _this.taskManagementData.taskList.find(function (item) {
+          return item.id === taskId;
+        }); // New Status
+
+
+        if (task.status == 1) {
+          task.status = 2;
+        } else {
+          task.status = 1;
+        } // Save To Local Storage
+
+
+        _this.SaveData(); // Rerender Task List
+
+
+        _this.RenderTask();
+      }); // Add Task
+
+      this.$AddTaskButton.on('click', function (e) {
+        _this.AddTask();
+      });
+      this.$NewTaskInput.on('keyup', function (e) {
+        if (e.keyCode == 13 || e.code == 'Enter' || e.key == "Enter") {
+          _this.AddTask();
+        }
+      });
+    }
+  }, {
+    key: "AddTask",
+    value: function AddTask() {
+      if (this.$NewTaskInput.val() !== '') {
+        var taskName = this.$NewTaskInput.val();
+        this.taskManagementData.taskList.unshift({
+          id: "task-".concat(Math.floor(Math.random() * 10000)),
+          name: taskName,
+          status: 1 // 1 is undone, 2 is done
+
+        }); // Clear The Input
+
+        this.$NewTaskInput.val('');
+        this.SaveData(); // Rerender Task
+
+        this.RenderTask();
+      }
+    }
+  }, {
+    key: "SaveData",
+    value: function SaveData() {
+      localStorage.setItem('nihatoTodoManagement', JSON.stringify(this.taskManagementData));
+    }
+  }, {
+    key: "LoadData",
+    value: function LoadData() {
+      if (localStorage.getItem('nihatoTodoManagement')) {
+        var data = JSON.parse(localStorage.getItem('nihatoTodoManagement'));
+        return data;
+      } else {
+        return {
+          taskList: []
+        };
+      }
+    }
+  }]);
+
+  return TaskManagement;
+}();
+
+exports.default = TaskManagement;
 
 /***/ })
 /******/ ]);
