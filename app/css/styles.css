@@ -393,7 +393,7 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
-        max-height: 200px;
+        max-height: 65vh;
         overflow-y: auto; }
         html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item,
         body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item {
