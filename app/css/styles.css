@@ -56,432 +56,205 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
-    /* Background Layer */
-    /* Main Content Layer */
-    /* Information Layer */ }
-    html .page-wrapper .background-layer,
-    body .page-wrapper .background-layer {
-      z-index: 1;
+    display: grid;
+    background-color: #222;
+    grid-template-columns: auto 320px;
+    grid-template-rows: auto 280px; }
+
+.illustration-block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Background Layer */
+  /* Main Content Layer */ }
+  .illustration-block .background-layer {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #222; }
+    .illustration-block .background-layer .page-bg {
+      position: absolute;
       width: 100%;
       height: 100%;
-      position: absolute;
       top: 0;
       left: 0;
-      background-color: #222; }
-      html .page-wrapper .background-layer .page-bg,
-      body .page-wrapper .background-layer .page-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+      opacity: 0;
+      visibility: hidden; }
+      .illustration-block .background-layer .page-bg.active {
+        opacity: 1;
+        visibility: visible; }
+      .illustration-block .background-layer .page-bg.bg-between {
+        background: linear-gradient(#c94b4b, #4b134f); }
+      .illustration-block .background-layer .page-bg.bg-nighttime {
+        background: linear-gradient(#0f0c29, #302b63, #24243e); }
+      .illustration-block .background-layer .page-bg.bg-daytime {
+        background: linear-gradient(#f2994a, #f2c94c); }
+  .illustration-block .content-layer {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .illustration-block .content-layer.offline {
+      filter: brightness(0.3) grayscale(0.75); }
+    .illustration-block .content-layer .main-content {
+      width: 445px;
+      height: 400px;
+      position: relative; }
+      .illustration-block .content-layer .main-content .content-background {
         opacity: 0;
-        visibility: hidden; }
-        html .page-wrapper .background-layer .page-bg.active,
-        body .page-wrapper .background-layer .page-bg.active {
-          opacity: 1;
-          visibility: visible; }
-        html .page-wrapper .background-layer .page-bg.bg-between,
-        body .page-wrapper .background-layer .page-bg.bg-between {
-          background: linear-gradient(#c94b4b, #4b134f); }
-        html .page-wrapper .background-layer .page-bg.bg-nighttime,
-        body .page-wrapper .background-layer .page-bg.bg-nighttime {
-          background: linear-gradient(#0f0c29, #302b63, #24243e); }
-        html .page-wrapper .background-layer .page-bg.bg-daytime,
-        body .page-wrapper .background-layer .page-bg.bg-daytime {
-          background: linear-gradient(#f2994a, #f2c94c); }
-    html .page-wrapper .content-layer,
-    body .page-wrapper .content-layer {
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 10vh; }
-      html .page-wrapper .content-layer.offline,
-      body .page-wrapper .content-layer.offline {
-        filter: brightness(0.3) grayscale(0.75); }
-      html .page-wrapper .content-layer .main-content,
-      body .page-wrapper .content-layer .main-content {
-        position: relative; }
-        html .page-wrapper .content-layer .main-content .content-background,
-        body .page-wrapper .content-layer .main-content .content-background {
-          opacity: 0; }
-          html .page-wrapper .content-layer .main-content .content-background img,
-          body .page-wrapper .content-layer .main-content .content-background img {
-            height: 70vh; }
-        html .page-wrapper .content-layer .main-content .content-item,
-        body .page-wrapper .content-layer .main-content .content-item {
-          position: absolute;
-          opacity: 0; }
-          html .page-wrapper .content-layer .main-content .content-item.item-bed,
-          body .page-wrapper .content-layer .main-content .content-item.item-bed {
-            z-index: 2;
-            width: 42.2%;
-            top: 40%;
-            left: 2.6%; }
-          html .page-wrapper .content-layer .main-content .content-item.item-desk,
-          body .page-wrapper .content-layer .main-content .content-item.item-desk {
-            z-index: 3;
-            width: 45.1%;
-            top: 17%;
-            left: 27.7%; }
-          html .page-wrapper .content-layer .main-content .content-item.item-shelf,
-          body .page-wrapper .content-layer .main-content .content-item.item-shelf {
-            z-index: 5;
-            width: 27.4%;
-            top: 27.97%;
-            left: 70.5%; }
-          html .page-wrapper .content-layer .main-content .content-item.item-rug,
-          body .page-wrapper .content-layer .main-content .content-item.item-rug {
-            z-index: 4;
-            width: 17.56%;
-            top: 74.7%;
-            left: 40.9%; }
-          html .page-wrapper .content-layer .main-content .content-item.item-clock,
-          body .page-wrapper .content-layer .main-content .content-item.item-clock {
-            z-index: 3;
-            width: 6.4%;
-            top: 22.3%;
-            left: 17.95%; }
-        html .page-wrapper .content-layer .main-content .screen-item,
-        body .page-wrapper .content-layer .main-content .screen-item {
-          position: absolute;
-          z-index: 6;
-          background-color: #666;
-          width: 19%;
-          height: 9.7%;
-          overflow: hidden;
-          top: 18.4%;
-          left: 38.2%;
-          display: none; }
-          html .page-wrapper .content-layer .main-content .screen-item.active,
-          body .page-wrapper .content-layer .main-content .screen-item.active {
-            display: block; }
-          html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout,
-          body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout {
-            width: 75%;
-            margin: 10% auto 0;
-            background-color: #eee;
-            height: 320%;
-            padding-top: 10%;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            animation: scrolling 10s cubic-bezier(0.55, 0.01, 0.48, 1) 500ms infinite; }
-            html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column,
-            body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column {
-              background-color: #aaa;
-              flex-basis: 45%;
-              margin-bottom: 5%; }
-              html .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3,
-              body .page-wrapper .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3 {
-                flex-basis: 90%;
-                width: 100%; }
-      html .page-wrapper .content-layer.offline .screen-item,
-      body .page-wrapper .content-layer.offline .screen-item {
-        display: none !important; }
-        html .page-wrapper .content-layer.offline .screen-item .screen-item-layout,
-        body .page-wrapper .content-layer.offline .screen-item .screen-item-layout {
-          animation: none; }
-    html .page-wrapper .information-layer .copyright-block,
-    body .page-wrapper .information-layer .copyright-block {
-      position: absolute;
-      z-index: 5;
-      right: 0;
-      bottom: 0;
-      padding: 10px 15px;
-      color: #fff;
-      opacity: 0.5;
-      font-size: 20px;
-      font-weight: 600; }
-    html .page-wrapper .information-layer .clock-block,
-    body .page-wrapper .information-layer .clock-block {
-      position: absolute;
-      z-index: 6;
-      width: 50%;
-      left: 25%;
-      padding: 15px;
-      font-size: 28px;
-      color: #fff;
-      font-family: "Roboto Mono", monospace;
-      text-align: center; }
-      html .page-wrapper .information-layer .clock-block > *,
-      body .page-wrapper .information-layer .clock-block > * {
-        display: block; }
-    html .page-wrapper .information-layer .controller-block,
-    body .page-wrapper .information-layer .controller-block {
-      position: absolute;
-      z-index: 7;
-      left: 0;
-      padding: 10px; }
-      html .page-wrapper .information-layer .controller-block .control-time,
-      html .page-wrapper .information-layer .controller-block .control-status,
-      body .page-wrapper .information-layer .controller-block .control-time,
-      body .page-wrapper .information-layer .controller-block .control-status {
-        color: #fff;
-        border: 1px solid #fff;
-        line-height: 2.25;
-        display: block;
-        width: 120px;
-        font-size: 11px;
-        text-align: center;
-        margin-bottom: 8px;
-        background: transparent;
-        outline: none;
-        cursor: pointer;
-        transition: all ease-in 100ms;
-        font-weight: 600; }
-        html .page-wrapper .information-layer .controller-block .control-time:hover,
-        html .page-wrapper .information-layer .controller-block .control-status:hover,
-        body .page-wrapper .information-layer .controller-block .control-time:hover,
-        body .page-wrapper .information-layer .controller-block .control-status:hover {
-          background-color: #fff;
-          color: #333;
-          transition: all ease-out 150ms; }
-    html .page-wrapper .information-layer .video-player-block,
-    body .page-wrapper .information-layer .video-player-block {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 3;
-      color: #fff;
-      -webkit-transform: translateY(0%);
-      transform: translateY(0%);
-      transition: all cubic-bezier(0.08, 0.24, 0.37, 0.99) 750ms; }
-      html .page-wrapper .information-layer .video-player-block.minimized,
-      body .page-wrapper .information-layer .video-player-block.minimized {
-        -webkit-transform: translateY(100%);
-        transform: translateY(100%);
-        transition: all ease-out 500ms; }
-      html .page-wrapper .information-layer .video-player-block .video-holder,
-      body .page-wrapper .information-layer .video-player-block .video-holder {
-        width: 320px;
-        height: 240px;
-        border: 1px solid #fff;
-        border-radius: 2px;
+        height: 100%;
+        width: 100%; }
+        .illustration-block .content-layer .main-content .content-background img {
+          width: 100%; }
+      .illustration-block .content-layer .main-content .content-item {
+        position: absolute;
+        opacity: 0; }
+        .illustration-block .content-layer .main-content .content-item.item-bed {
+          z-index: 2;
+          width: 42.2%;
+          top: 40%;
+          left: 2.6%; }
+        .illustration-block .content-layer .main-content .content-item.item-desk {
+          z-index: 3;
+          width: 45.1%;
+          top: 17%;
+          left: 27.7%; }
+        .illustration-block .content-layer .main-content .content-item.item-shelf {
+          z-index: 5;
+          width: 27.4%;
+          top: 27.97%;
+          left: 70.5%; }
+        .illustration-block .content-layer .main-content .content-item.item-rug {
+          z-index: 4;
+          width: 17.56%;
+          top: 74.7%;
+          left: 40.9%; }
+        .illustration-block .content-layer .main-content .content-item.item-clock {
+          z-index: 3;
+          width: 6.4%;
+          top: 22.3%;
+          left: 17.95%; }
+      .illustration-block .content-layer .main-content .screen-item {
+        position: absolute;
+        z-index: 6;
+        background-color: #666;
+        width: 19%;
+        height: 9.7%;
         overflow: hidden;
-        margin-bottom: 5px; }
-      html .page-wrapper .information-layer .video-player-block .video-kind-selector,
-      body .page-wrapper .information-layer .video-player-block .video-kind-selector {
-        position: relative;
-        z-index: 2; }
-        html .page-wrapper .information-layer .video-player-block .video-kind-selector .control-label-button,
-        body .page-wrapper .information-layer .video-player-block .video-kind-selector .control-label-button {
-          width: 100%;
-          font-size: 16px;
-          font-weight: 600;
-          text-align: center;
-          background-color: #fff;
-          color: #222;
-          line-height: 2;
-          position: relative; }
-          html .page-wrapper .information-layer .video-player-block .video-kind-selector .control-label-button .icon,
-          body .page-wrapper .information-layer .video-player-block .video-kind-selector .control-label-button .icon {
-            width: 32px;
-            right: 0;
-            top: 0;
-            text-align: center;
-            line-height: 2;
-            position: absolute; }
-        html .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list,
-        body .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list {
-          position: absolute;
-          left: 100%;
-          background-color: #fff;
-          bottom: 0;
-          padding: 0;
-          margin: 0;
-          color: #222;
-          list-style: none;
-          white-space: nowrap; }
-          html .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list .video-item,
-          body .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list .video-item {
-            padding: 0 20px 0 15px;
-            line-height: 1.7;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all ease-in 100ms; }
-            html .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list .video-item:hover,
-            body .page-wrapper .information-layer .video-player-block .video-kind-selector .video-list .video-item:hover {
-              transition: all ease-out 150ms;
-              color: #2c3e50;
-              background-color: #ecf0f1; }
-      html .page-wrapper .information-layer .video-player-block .video-controller,
-      body .page-wrapper .information-layer .video-player-block .video-controller {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 15px;
-        display: flex;
-        z-index: 4; }
-        html .page-wrapper .information-layer .video-player-block .video-controller .control-btn,
-        body .page-wrapper .information-layer .video-player-block .video-controller .control-btn {
-          margin: 0 3px;
-          width: 24px;
-          height: 24px;
-          text-align: center;
-          cursor: pointer;
-          border: 1px solid #fff;
-          transition: all ease-in 100ms; }
-          html .page-wrapper .information-layer .video-player-block .video-controller .control-btn .fas,
-          body .page-wrapper .information-layer .video-player-block .video-controller .control-btn .fas {
-            font-size: 18px;
-            line-height: 24px; }
-            html .page-wrapper .information-layer .video-player-block .video-controller .control-btn .fas.fa-play,
-            body .page-wrapper .information-layer .video-player-block .video-controller .control-btn .fas.fa-play {
-              font-size: 12px; }
-          html .page-wrapper .information-layer .video-player-block .video-controller .control-btn:hover,
-          body .page-wrapper .information-layer .video-player-block .video-controller .control-btn:hover {
-            transition: all ease-out 150ms;
-            color: #222;
-            background-color: #fff; }
-      html .page-wrapper .information-layer .video-player-block .video-status-indicator,
-      body .page-wrapper .information-layer .video-player-block .video-status-indicator {
-        position: absolute;
-        bottom: 100%;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        border: 1px solid #fff;
-        border-bottom: none; }
-        html .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico,
-        body .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico {
-          position: absolute;
-          text-align: center;
-          width: 40px;
-          height: 40px;
-          font-size: 18px;
-          line-height: 40px; }
-          html .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico .icon-holder,
-          body .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico .icon-holder {
-            width: 40px;
-            height: 40px; }
-            html .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico .icon-holder svg rect,
-            body .page-wrapper .information-layer .video-player-block .video-status-indicator .indicator-ico .icon-holder svg rect {
-              fill: #fff; }
-        html .page-wrapper .information-layer .video-player-block .video-status-indicator.is-playing .is-playing-icon,
-        body .page-wrapper .information-layer .video-player-block .video-status-indicator.is-playing .is-playing-icon {
+        top: 18.4%;
+        left: 38.2%;
+        display: none; }
+        .illustration-block .content-layer .main-content .screen-item.active {
           display: block; }
-        html .page-wrapper .information-layer .video-player-block .video-status-indicator.is-playing .video-player-icon,
-        body .page-wrapper .information-layer .video-player-block .video-status-indicator.is-playing .video-player-icon {
-          display: none; }
-        html .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .is-playing-icon,
-        body .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .is-playing-icon {
-          display: none; }
-        html .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .video-player-icon,
-        body .page-wrapper .information-layer .video-player-block .video-status-indicator.is-stopped .video-player-icon {
-          display: block; }
-    html .page-wrapper .information-layer .todo-list-block,
-    body .page-wrapper .information-layer .todo-list-block {
+        .illustration-block .content-layer .main-content .screen-item .screen-item-layout {
+          width: 75%;
+          margin: 10% auto 0;
+          background-color: #eee;
+          height: 320%;
+          padding-top: 10%;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          animation: scrolling 10s cubic-bezier(0.55, 0.01, 0.48, 1) 500ms infinite; }
+          .illustration-block .content-layer .main-content .screen-item .screen-item-layout .layout-column {
+            background-color: #aaa;
+            flex-basis: 45%;
+            margin-bottom: 5%; }
+            .illustration-block .content-layer .main-content .screen-item .screen-item-layout .layout-column.column-3 {
+              flex-basis: 90%;
+              width: 100%; }
+    .illustration-block .content-layer.offline .screen-item {
+      display: none !important; }
+      .illustration-block .content-layer.offline .screen-item .screen-item-layout {
+        animation: none; }
+
+.bottom-widget {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  background-color: #ededed;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden; }
+  .bottom-widget .widget {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .bottom-widget .widget .widget-name {
       position: absolute;
-      top: 0;
       right: 0;
-      width: 320px;
-      z-index: 4;
-      color: #fff; }
-      html .page-wrapper .information-layer .todo-list-block .todo-list-head,
-      body .page-wrapper .information-layer .todo-list-block .todo-list-head {
-        text-align: center;
-        font-size: 15px; }
-      html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list,
-      body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list {
+      top: 6px;
+      background-color: #666;
+      color: #fff;
+      margin: 0;
+      font-size: 11px;
+      padding: 3px 8px;
+      z-index: 3; }
+    .bottom-widget .widget .widget-content {
+      width: 100%;
+      height: 100%; }
+  .bottom-widget .take-note-widget .widget-content {
+    display: flex;
+    flex-direction: column; }
+    .bottom-widget .take-note-widget .widget-content .notes-holder {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden; }
+      .bottom-widget .take-note-widget .widget-content .notes-holder .note-list {
+        display: flex;
+        max-width: none;
+        list-style: none;
         margin: 0;
         padding: 0;
-        list-style: none;
-        max-height: 65vh;
-        overflow-y: auto; }
-        html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item,
-        body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item {
-          display: flex;
-          padding: 0 10px;
-          margin-bottom: 5px; }
-          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-name,
-          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-name {
-            flex: 1;
-            font-weight: 600;
-            opacity: 0.8;
-            line-height: 1.4;
-            display: flex;
-            min-height: 30px;
-            align-items: center;
-            font-size: 13px; }
-          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action,
-          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action {
-            flex-shrink: 0; }
-            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn,
-            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn {
-              background-color: #fff;
-              text-align: center;
-              line-height: 30px;
-              width: 30px;
-              text-align: center;
-              outline: none;
-              border: none;
-              cursor: pointer; }
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn i,
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fas,
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fab,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn i,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fas,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-done-btn .fab {
-                color: #27ae60; }
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn i,
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fas,
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fab,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn i,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fas,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn.task-delete-btn .fab {
-                color: #e74c3c; }
-              html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn:hover,
-              body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item .task-action .cta-btn:hover {
-                background-color: #ecf0f1; }
-          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-name,
-          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-name {
-            text-decoration: line-through;
-            opacity: 0.5; }
-          html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn,
-          body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn {
-            opacity: 0.6; }
-            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn i,
-            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fas,
-            html .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fab,
-            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn i,
-            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fas,
-            body .page-wrapper .information-layer .todo-list-block .todo-list-body .todo-list .todo-item.done .task-action .cta-btn.task-done-btn .fab {
-              color: #999; }
-      html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller,
-      body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller {
-        display: flex; }
-        html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller input,
-        body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller input {
-          height: 30px;
-          line-height: 30px;
-          padding: 0 10px;
-          outline: none; }
-        html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta,
-        body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta {
-          flex-grow: 1; }
-          html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button,
-          body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button {
-            background: #fff;
-            border: none;
-            outline: none;
-            height: 30px;
+        height: 100%; }
+        .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item {
+          flex-basis: 220px;
+          flex-shrink: 0;
+          background-color: #fff;
+          margin: 10px 6px;
+          width: 220px;
+          height: calc(100% -10px);
+          max-height: calc(100% -10px);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+          padding: 15px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          position: relative; }
+          .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item .note-desc,
+          .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item p,
+          .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item .note-title {
+            margin-top: 0; }
+          .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item .note-desc {
+            color: #333;
+            font-size: 13px;
+            line-height: 1.65; }
+          .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item .note-action {
+            position: absolute;
+            text-align: center;
+            padding: 15px 0;
             width: 100%;
-            line-height: 30px;
-            font-weight: 600;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all ease-in 100ms; }
-            html .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button:hover,
-            body .page-wrapper .information-layer .todo-list-block .todo-list-footer .todo-list-controller .control-cta button:hover {
-              background-color: #ecf0f1;
-              transition: all ease-out 150ms; }
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); }
+            .bottom-widget .take-note-widget .widget-content .notes-holder .note-list .note-item .note-action .btn {
+              background-color: transparent;
+              width: 32px;
+              height: 32px;
+              border: 1px solid #fff;
+              margin: 0 5px;
+              border-radius: 16px;
+              line-height: 30px;
+              text-align: center; }
 
 @keyframes floating {
   0%,

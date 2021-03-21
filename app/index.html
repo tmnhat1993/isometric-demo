@@ -42,212 +42,142 @@
   <body class="full-screen">
     <!-- MAIN CONTENT -->
     <div class="page-wrapper">
-      <!-- Background Layer -->
-      <div class="background-layer">
-        <div class="page-bg bg-nighttime"></div>
-        <div class="page-bg bg-daytime"></div>
-        <div class="page-bg bg-between"></div>
-      </div>
+      <!-- Illustration Block -->
+      <div class="illustration-block">
+        <!-- Background Layer -->
+        <div class="background-layer">
+          <div class="page-bg bg-nighttime"></div>
+          <div class="page-bg bg-daytime"></div>
+          <div class="page-bg bg-between"></div>
+        </div>
 
-      <!-- Main Content -->
-      <div class="content-layer online">
         <!-- Main Content -->
-        <div class="main-content">
-          <div class="content-background" id="room-bg">
-            <img draggable="false" src="images/main-room.png" alt="" />
-          </div>
+        <div class="content-layer online">
+          <!-- Main Content -->
+          <div class="main-content">
+            <div class="content-background" id="room-bg">
+              <img draggable="false" src="images/main-room.png" alt="" />
+            </div>
 
-          <!-- Content Item - Rug -->
-          <div class="content-item item-rug bg-holder" id="room-rug">
-            <img draggable="false" src="images/rug.png" alt="" />
-          </div>
+            <!-- Content Item - Rug -->
+            <div class="content-item item-rug bg-holder" id="room-rug">
+              <img draggable="false" src="images/rug.png" alt="" />
+            </div>
 
-          <!-- Content Item - Desk -->
-          <div class="content-item item-desk bg-holder" id="room-desk">
-            <img draggable="false" src="images/desk.png" alt="" />
-          </div>
+            <!-- Content Item - Desk -->
+            <div class="content-item item-desk bg-holder" id="room-desk">
+              <img draggable="false" src="images/desk.png" alt="" />
+            </div>
 
-          <!-- Content Item - Shelf -->
-          <div class="content-item item-shelf bg-holder" id="room-shelf">
-            <img draggable="false" src="images/shelf.png" alt="" />
-          </div>
+            <!-- Content Item - Shelf -->
+            <div class="content-item item-shelf bg-holder" id="room-shelf">
+              <img draggable="false" src="images/shelf.png" alt="" />
+            </div>
 
-          <!-- Content Item - Bed -->
-          <div class="content-item item-bed bg-holder" id="room-bed">
-            <img draggable="false" src="images/bed.png" alt="" />
-          </div>
+            <!-- Content Item - Bed -->
+            <div class="content-item item-bed bg-holder" id="room-bed">
+              <img draggable="false" src="images/bed.png" alt="" />
+            </div>
 
-          <!-- Content Item - Clock -->
-          <div class="content-item item-clock bg-holder" id="room-clock">
-            <img draggable="false" src="images/clock.png" alt="" />
-          </div>
+            <!-- Content Item - Clock -->
+            <div class="content-item item-clock bg-holder" id="room-clock">
+              <img draggable="false" src="images/clock.png" alt="" />
+            </div>
 
-          <!-- Screen Item -->
-          <div class="screen-item" id="on-screen-monitor">
-            <div class="screen-item-layout">
-              <div class="layout-column column-1"></div>
-              <div class="layout-column column-2"></div>
-              <div class="layout-column column-3"></div>
-              <div class="layout-column column-1"></div>
-              <div class="layout-column column-2"></div>
-              <div class="layout-column column-1"></div>
-              <div class="layout-column column-2"></div>
+            <!-- Screen Item -->
+            <div class="screen-item" id="on-screen-monitor">
+              <div class="screen-item-layout">
+                <div class="layout-column column-1"></div>
+                <div class="layout-column column-2"></div>
+                <div class="layout-column column-3"></div>
+                <div class="layout-column column-1"></div>
+                <div class="layout-column column-2"></div>
+                <div class="layout-column column-1"></div>
+                <div class="layout-column column-2"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Illustration Block - END -->
 
-      <!-- Information Layer -->
-      <div class="information-layer" id="information-layer">
-        <!-- Title Block -->
-        <div class="title-block"></div>
-
-        <!-- Clock Block -->
-        <div class="clock-block" id="clock-area">
-          <div class="date" id="date-holder">Tues 4th 2021</div>
-          <div class="hours" id="time-holder"></div>
-        </div>
-
-        <!-- Copyright Block -->
-        <div class="copyright-block" id="copyright-area">#Nihato</div>
-
-        <!-- Controller Block -->
-        <div class="controller-block" id="control-area">
-          <button class="control-time to-daytime" data-switch-time="daytime">
-            Daytime
-          </button>
-          <button
-            class="control-time to-nighttime"
-            data-switch-time="nighttime"
-          >
-            Nighttime
-          </button>
-          <button class="control-time to-between" data-switch-time="between">
-            Transition Time
-          </button>
-          <button class="control-status to-offline" id="control-to-offline">
-            Offline
-          </button>
-          <button class="control-status to-online" id="control-to-online">
-            Online
-          </button>
-        </div>
-
-        <!-- Video Player Block -->
-        <div class="video-player-block" id="video-player">
-          <!-- Video Holder -->
-          <div class="video-holder" id="video-holder"></div>
-
-          <!-- Video Selector -->
-          <div class="video-kind-selector">
-            <div class="control-label-button">
-              <span class="label" id="current-video-name">Select Video</span>
-              <span class="icon"><i class="fas fa-chevron-right"></i></span>
-            </div>
-            <ul class="video-list">
-              <li
-                class="video-item play-video-player"
-                data-weather="lofi"
-                data-video-id="5qap5aO4i9A"
-              >
-                Work Music
-              </li>
-              <li
-                class="video-item play-video-player"
-                data-weather="rain"
-                data-video-id="q76bMs-NwRk"
-              >
-                Rain
-              </li>
-              <li
-                class="video-item play-video-player"
-                data-weather="coffee"
-                data-video-id="gaGrHUekGrc"
-              >
-                Coffee Shop
-              </li>
-              <li
-                class="video-item play-video-player"
-                data-weather="sleep"
-                data-video-id="bP9gMpl1gyQ"
-              >
-                Ambient Sound - Sleep
-              </li>
-            </ul>
-          </div>
-
-          <!-- Video Controller -->
-          <div class="video-controller">
-            <div class="control-btn close-video-player-btn">
-              <i class="fas fa-times"></i>
-            </div>
-            <div class="control-btn minimize-video-player-btn">
-              <i class="fas fa-window-minimize"></i>
-            </div>
-          </div>
-
-          <!-- Video Status Indicator -->
-          <div class="video-status-indicator is-stopped">
-            <div class="is-playing-icon indicator-ico">
-              <div class="icon-holder">
-                <svg viewbox="0 0 100 100" class="sound-indicator-ico">
-                  <rect
-                    width="25"
-                    height="100"
-                    class="sound-indicator-item item-1"
-                    x="0"
-                    y="0"
-                  />
-                  <rect
-                    width="25"
-                    height="100"
-                    class="sound-indicator-item item-2"
-                    x="33"
-                    y="0"
-                  />
-                  <rect
-                    width="25"
-                    height="100"
-                    class="sound-indicator-item item-3"
-                    x="66"
-                    y="0"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="video-player-icon indicator-ico">
-              <i class="fab fa-youtube"></i>
+      <!-- Bottom Widget Block -->
+      <div class="bottom-widget">
+        <!-- Widget Wrapper -->
+        <div class="widget take-note-widget" id="take-note-widget">
+          <h3 class="widget-name">Takes Notes</h3>
+          <div class="widget-content">
+            <div class="notes-holder">
+              <ul class="note-list">
+                <li class="note-item">
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                  <div class="note-action">
+                    <button class="btn btn-edit-note"></button>
+                    <button class="btn btn-remove-note"></button>
+                  </div>
+                </li>
+                <li class="note-item">
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                </li>
+                <li class="note-item">
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                  <div class="note-action">
+                    <button class="btn btn-edit-note"></button>
+                    <button class="btn btn-remove-note"></button>
+                  </div>
+                </li>
+                <li class="note-item">
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                  <p class="note-desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et
+                    cupiditate maxime illo. Dicta maxime ratione nesciunt natus
+                    cumque, earum modi inventore vero itaque nisi nemo eaque
+                    quidem? Fuga, dolorum obcaecati?
+                  </p>
+                </li>
+                <li class="note-item final-item"></li>
+              </ul>
             </div>
           </div>
         </div>
-        <!-- Video Player Block - END -->
-
-        <!-- Todo List Block -->
-        <div class="todo-list-block" id="todo-list-block">
-          <!-- Todo List Head -->
-          <div class="todo-list-head txt-center">
-            <h3 class="block-title">Task Lists</h3>
-          </div>
-
-          <!-- Todo List Body -->
-          <div class="todo-list-body">
-            <ul class="todo-list" id="main-todo-list"></ul>
-          </div>
-
-          <!-- Todo List Footer -->
-          <div class="todo-list-footer">
-            <div class="todo-list-controller">
-              <div class="task-name-control">
-                <input type="text" id="new-task-name" />
-              </div>
-              <div class="control-cta">
-                <button class="add-task-btn" id="add-new-task">Add Task</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Todo List Block - END -->
+        <!-- Widget Wrapper -->
       </div>
+      <!-- Bottom Widget Block - END -->
+
+      <!-- Sidebar Tools Box -->
+      <!-- Sidebar Tools Box - END  -->
     </div>
     <!-- MAIN CONTENT -->
 
